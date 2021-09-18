@@ -85,7 +85,7 @@
         <div class="post clearfix">
           <img src="./image/Casino -(Flickr).jpg" alt="" class="post-image">
           <div class="post-preview">
-            <h2><a href="single.hmtl">The strongest and sweetest songs yet remain to be sung</a></h2>
+            <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
             <i class="far fa-user"> Awa Melvine</i>
             &nbsp;
             <i class="far fa-calendar"> Mar 11, 2019</i>

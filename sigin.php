@@ -10,9 +10,9 @@ $row = mysqli_fetch_array($sql);
 
 if($row["total"] > 0){
     $_SESSION['username'] = $username;
-    echo "<script> alert('Login Success');window.location='../admin/dashboard.php'</script>"; 
+    echo "<script> alert('Login Success');window.location='admin/dashboard.php'</script>"; 
 }else{
-    echo "<script> alert('Login Failed');window.location='../admin/index.php '</script>";
+    echo "<script> alert('Login Failed');window.location='admin/index.php '</script>";
 }
 
 
