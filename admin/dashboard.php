@@ -34,26 +34,26 @@
     <div class="content">
 
         <h2 class="page-title">Create Post</h2>
-        <div class="content">
-                    <form action="" method="post">
-                        <div>
-                            <label>Title</label>
-                            <input type="text" name="title" class="text-input">
-                        </div>
-                        <div class="body">
-                            <label>Body</label>
-                            <textarea name="body" id="body"></textarea>
-                        </div>
-                        <div>
-                            <label>Image</label>
-                            <input type="file" name="image" class="text-input">
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-big">Add Post</button>
-                        </div>
-                    </form>
+        <div class="add_article">
+			<form action="./process.php" method="POST">
+				<div>
+					<label>Title</label>
+					<input type="text" name="article_title" class="text-input">
+				</div>
+				<div class="article_content">
+					<label>Content</label>
+					<textarea name="article_content" id="editor"></textarea>
+				</div>
+				<!-- <div>
+					<label>Image</label>
+					<input type="file" name="image" class="text-input">
+				</div> -->
+				<div>
+					<button type="submit" name="submit" class="btn btn-big">Add Post</button>
+				</div>
+			</form>
 
-                </div>
+          </div>
 
     </div>
 
@@ -61,5 +61,21 @@
 <!-- // Admin Content -->
 
 </div>
+
+<!-- <script src="../ckeditor5-build-classic/ckeditor.js"></script>
+<script>
+	CKEDITOR.replace('articleEditor');
+</script> -->
+<script src="./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor' ) )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( error => {
+			console.error( 'There was a problem initializing the editor.', error );
+		} );
+</script>
 </body>
 </html>
