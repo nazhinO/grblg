@@ -1,3 +1,13 @@
+<?php
+
+  require_once('./database/connect.php');
+  
+  $sql = "SELECT * FROM article ORDER BY ID DESC;";
+  $execute = mysqli_query($conn, $sql);
+  $postData = mysqli_num_rows($execute);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,17 +93,44 @@
       <div class="main-content">
         <h1 class="recent-post-title">Recent Posts</h1>
         <div class="post clearfix">
-          <img src="./image/Casino -(Flickr).jpg" alt="" class="post-image">
+          <!-- <img src="./image/Casino -(Flickr).jpg" alt="" class="post-image"> -->
           <div class="post-preview">
-            <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
-            <i class="far fa-user"> Awa Melvine</i>
+          <?php
+            if($postData > 0){
+              while($row = mysqli_fetch_array($execute)){ 
+                  $timestamp = $row['date_published'];
+                  $date = date('M, d Y', strtotime($timestamp));
+                  $time = date('h:i A', strtotime($timestamp));
+                  $author = $row['user_ID'];
+                ?>
+                <h2> <a href="./details.php?ID=<?php echo $row['ID']; ?>"> <?php echo $row['article_title']; ?> </a> </h2>
+                <span class="far fa-calendar"> Published on: <?php echo $date; ?> At: <?php echo $time; ?> </span> </br>
+                <span class="far fa-user"> By: 
+                  <?php
+                    $getAuthor = "SELECT * FROM user WHERE id = '$author';";
+                    $result = mysqli_query($conn, $getAuthor);
+                    $getName = mysqli_num_rows($result);
+
+                    if($getName == 1){
+                      while($authorName = mysqli_fetch_array($result)){
+
+                      echo $authorName['name']; 
+                      }
+                    }else{
+                      echo "Database is EMPTY!";
+                    }
+                  ?> 
+                </span>
+                <?php 
+              }
+            }
+          ?>
             &nbsp;
-            <i class="far fa-calendar"> Mar 11, 2019</i>
-            <p class="preview-text">
+            <!-- <p class="preview-text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Exercitationem optio possimus a inventore maxime laborum.
             </p>
-            <a href="single.html" class="btn read-more">Read More</a>
+            <a href="single.html" class="btn read-more">Read More</a> -->
           </div>
         </div>
          
@@ -120,6 +157,11 @@
 
   <!-- Custom Script -->
   <script src="js/scripts.js"></script>
+
+
+
+      
+      
 
 </body>
 

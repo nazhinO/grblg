@@ -9,14 +9,15 @@ if(isset($_POST['submit'])){
 
 	if(!empty($title) || !empty($content)){
 
-		$sql = "INSERT INTO article(article_title, article_content, user_ID) VALUES('$title', '$content', '1');";
+		$sql = "INSERT INTO article(article_title, article_content, user_ID) VALUES('$title', '$content', '21');";
 		$execute = mysqli_query($conn, $sql);
 
 		if(!$execute){
 			echo "Failed to submit the data";
 			exit();
 		}else{
-			echo "Article published successfully!";
+			header('refresh:3; url=dashboard.php');
+			echo "Articled published successfully!";
 			exit();
 		}
 
