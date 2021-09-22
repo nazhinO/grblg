@@ -1,12 +1,9 @@
 <?php
-
   require_once('./database/connect.php');
   
   $sql = "SELECT * FROM article ORDER BY ID DESC;";
   $execute = mysqli_query($conn, $sql);
   $postData = mysqli_num_rows($execute);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -32,9 +32,18 @@
 		$execute = mysqli_query($conn, $sql);
 		$post = mysqli_fetch_assoc($execute);
 
-		if($auth_id != $post['ID']){
+// $auth_id == $post['ID']
+		if($post > 0){ 
+		?>
+			<h1> <?php echo $post['article_title']; ?> </h1>
+			<p> <?php echo $post['article_content']; ?> </p>
+		<?php
+			
+		}else{
 			header('refresh:3; url=index.php');
 			echo "That article is none existent. You will now be redirected to the home page.";
+			
+		
 		}
 
 	}else{
@@ -43,8 +52,7 @@
 	}
 ?>
 
-<h1> <?php echo $post['article_title']; ?> </h1>
-<p> <?php echo $post['article_content']; ?> </p>
+
   
 <!-- footer -->
 <?php include("./footer.php");?>

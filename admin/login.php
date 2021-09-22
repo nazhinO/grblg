@@ -1,11 +1,13 @@
 <?php
+   /*
    session_start();
    if(isset($_SESSION['username'])){
    
    }
     else{
-      header("localtion:dashboard.php");
+      header("location:dashboard.php");
    }
+   */
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -14,7 +16,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <link rel="stylesheet" href="../css/login.css">
     </head>
     <body>
@@ -22,6 +23,9 @@
         <div class="logo">
           <h1 class="logo-text"></h1>
         </div>
+        <ul>
+          <li><a href="../index.php">Home</a></li>
+        </ul>
         <i class="fa fa-bars menu-toggle"></i>
     </header>
 
