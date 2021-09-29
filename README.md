@@ -3,20 +3,20 @@
 ## Subheading
 
 To Do List:
-+ [/] Home Page
-+ [/] Log in
-+ [/] Display Post ( Home Page )
-+ [/] Add Post
-+ [x] Edit Post
-+ [x] Delete Post
-+ [/] Add User
-+ [x] Edit User
-+ [x] Delete User
++ [x] Home Page
++ [x] Log in
++ [x] Display Post ( Home Page )
++ [x] Add Post
++ [-] Edit Post
++ [-] Delete Post
++ [x] Add User
++ [-] Edit User
++ [-] Delete User
 
-+ [/] Add Home Page for dashboard
-+ [/] Add Social Media 
++ [x] Add Home Page for dashboard
++ [x] Add Social Media 
 
-+ [/] centralize CSS
++ [x] centralize CSS
 
 - [] Search Post
 - [] Search User
