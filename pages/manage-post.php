@@ -1,4 +1,5 @@
 <?php include_once("./header.php"); ?>
+<?php require_once("../includes/session.inc.php"); ?>
   <div class="admin-wrapper">
 
 <!-- Left Sidebar -->
@@ -11,30 +12,55 @@
     <div class="content">
     <table>
         <thead>
-            <th>SN</th>
+            <th>ID</th>
             <th>Title</th>
             <th>Author</th>
             <th colspan="3">Action</th>
         </thead>
         <tbody>
+            <?php
+              require_once('../includes/dbh.inc.php');
+              
+              $sql = "SELECT * FROM post ORDER BY postID DESC;";
+              $execute = mysqli_query($conn, $sql);
+              $postData = mysqli_num_rows($execute);
+            ?>
             <tr>
-                <td>1</td>
-                <td>This is the first post</td>
-                <td>Awa</td>
-                <td><a href="#" class="edit">edit</a></td>
-                <td><a href="#" class="delete">delete</a></td>
-                <td><a href="#" class="publish">publish</a></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>This is the first post</td>
-                <td>Awa</td>
-                <td><a href="#" class="edit">edit</a></td>
-                <td><a href="#" class="delete">delete</a></td>
-                <td><a href="#" class="publish">publish</a></td>
-            </tr>
-            
+                <?php
+                if($postData > 0){
+                 while($row = mysqli_fetch_array($execute)){ 
+                  $id = $row['postID'];
+                  $title = $row['postTitle'];
+                  $author = $row['postAuthor'];
+                ?>
+                <td><?php echo $id ?></td>
+                <td><?php echo $title; ?></td>
+                <td>
+                    <?php
+                    $getAuthor = "SELECT * FROM user WHERE userID = '$author';";
+                    $result = mysqli_query($conn, $getAuthor);
+                    $getName = mysqli_num_rows($result);
 
+                    if($getName == 1){
+                      while($authorName = mysqli_fetch_array($result)){
+
+                      echo $authorName['userName']; 
+                      }
+                    }else{
+                      echo "Database is EMPTY!";
+                    }
+                  ?> 
+                </td>
+                <td><a href="#" class="edit">edit</a></td>
+                <td><a href="#" class="delete">delete</a></td>
+                <td><a href="#" class="publish">publish</a></td>
+            </tr>
+            <?php
+                }
+                ?>
+<?php
+                }
+                ?>
         </tbody>
     </table>
     
@@ -58,8 +84,6 @@
             console.error( 'There was a problem initializing the editor.', error );
         } );
 </script>
-</body>
-</html>
 
 </body>
 

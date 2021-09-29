@@ -68,7 +68,7 @@
       <!-- Main Content -->
       <div class="main-content">
         <h1 class="recent-post-title">Recent Posts</h1>
-        <div class="post clearfix">
+        
           <?php
             if($postData > 0){
               while($row = mysqli_fetch_array($execute)){ 
@@ -77,6 +77,7 @@
                   $time = date('h:i A', strtotime($timestamp));
                   $author = $row['postAuthor'];
                 ?>
+                <div class="post clearfix">
                 <img class="post-image" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
                 <div class="post-preview">
                 <h2> 
@@ -103,24 +104,23 @@
                 </i>
                 
                 <p class="preview-text"> <?php echo $row['postContent']; ?> </p>
-                <a href="single.html" class="btn read-more">Read More</a>
-                <?php 
-              }
-           ?>
-               
-
+                <a class="btn read-more" href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
+                    Read More
+                  </a> 
 
           </div>
           <!-- // post-preview" -->
           
-          <?php
-            }
-          ?>
-           
+          
 
         </div>
          <!-- // post clearfix" -->
-          
+          <?php 
+              }
+           ?>
+               <?php
+            }
+          ?>
 
       </div>
       <!-- // Main Content -->

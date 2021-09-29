@@ -26,6 +26,7 @@ if(isset($_POST['submit'])){
 			$execute = mysqli_query($conn, $sql);
 
 			if(!$execute){
+				header('refresh:3; url= ../pages/add-post.php');
 				echo "Failed to submit the data";
 				echo "Image probably is too large";
 				exit();

@@ -1,5 +1,6 @@
 <?php require_once('../includes/dbh.inc.php')?>
 <?php include("./header.php");?>
+<?php require_once("../includes/session.inc.php"); ?>
 <div class="admin-wrapper">
 
 <!-- Left Sidebar -->
@@ -73,8 +74,6 @@
       console.error( 'There was a problem initializing the editor.', error );
     } );
 </script>
-</body>
-</html>
 
 </body>
 

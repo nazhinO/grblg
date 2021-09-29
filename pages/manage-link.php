@@ -1,4 +1,12 @@
+<?php
+  require_once('../includes/dbh.inc.php');
+  
+  $sql = "SELECT * FROM link;";
+  $execute = mysqli_query($conn, $sql);
+  $linkData = mysqli_num_rows($execute);
+?>
 <?php include_once("./header.php"); ?>
+<?php require_once("../includes/session.inc.php"); ?>
 <div class="admin-wrapper">
 
 <!-- Left Sidebar -->
@@ -9,9 +17,27 @@
 <!-- Admin Content -->
 <div class="admin-content">
     <div class="content">
-
-        <h2 class="page-title">Hello <?php echo $_SESSION["userAlias"]; ?></h2>
-
+        <form action="../includes/manage-link.inc.php" method="GET">
+ 
+         <?php
+            if($linkData > 0){
+              while($row = mysqli_fetch_array($execute)){ 
+                  // $instagram = $row['linkInstagram'];
+                  // $twitter = $row['linkTwitter'];
+                  // $facebook = $row['linkFacebook'];
+        ?>
+                <label for="instagram">Instagram</label><br>
+                <input type="text" name="instagram" value="<?php echo $row['linkInstagram']; ?>" ><br>
+                <label for="twitter">Twitter</label><br>
+                <input type="text" name="twitter" value="<?php echo $row['linkTwitter']; ?> " ><br>
+                <label for="facebook">Facebook</label><br>
+                <input type="text" name="facebook" value="<?php echo $row['linkFacebook']; ?>" ><br>
+                <input type="submit" value="Update" name="submit">    
+        <?php 
+        }
+        }
+        ?>
+        </form>
     </div>
 
 </div>
@@ -31,10 +57,7 @@
             console.error( 'There was a problem initializing the editor.', error );
         } );
 </script>
-</body>
-</html>
+<!-- </body>
 
-</body>
-
-</html>
-<?php //include_once("./footer.php"); ?>
+</html> -->
+<?php include_once("./footer.php"); ?>

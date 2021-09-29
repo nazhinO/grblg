@@ -1,4 +1,5 @@
 <?php include_once("./header.php"); ?>
+<?php require_once("../includes/session.inc.php"); ?>
   <div class="admin-wrapper">
 
 <!-- Left Sidebar -->
@@ -9,6 +10,44 @@
 <!-- Admin Content -->
 <div class="admin-content">
     <div class="content">
+      <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th colspan="3">Action</th>
+        </thead>
+        <tbody>
+            <?php
+              require_once('../includes/dbh.inc.php');
+              
+              $sql = "SELECT * FROM user ORDER BY userID DESC;";
+              $execute = mysqli_query($conn, $sql);
+              $postData = mysqli_num_rows($execute);
+            ?>
+            <tr>
+                <?php
+                if($postData > 0){
+                 while($row = mysqli_fetch_array($execute)){ 
+                  $id = $row['userID'];
+                  $name = $row['userName'];
+                  $alias = $row['userAlias'];
+                ?>
+                <td><?php echo $id ?></td>
+                <td><?php echo $name; ?></td>
+                <td><?php echo $alias; ?></td>
+                <td><a href="#" class="edit">edit</a></td>
+                <td><a href="#" class="delete">delete</a></td>
+            </tr>
+            <?php
+                }
+                ?>
+<?php
+                }
+                ?>
+        </tbody>
+    </table>
+    
     </div>
 
 </div>
@@ -28,8 +67,6 @@
       console.error( 'There was a problem initializing the editor.', error );
     } );
 </script>
-</body>
-</html>
 
 </body>
 
