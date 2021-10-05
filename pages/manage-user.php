@@ -36,7 +36,7 @@
                 <td><?php echo $id ?></td>
                 <td><?php echo $name; ?></td>
                 <td><?php echo $alias; ?></td>
-                <td><a href="#" class="edit">edit</a></td>
+                <td><a href="edit-user.php?userID=<?php echo $id; ?>" class="edit">edit</a></td>
                 <td><a href="#" class="delete">delete</a></td>
             </tr>
             <?php
