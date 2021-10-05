@@ -4,10 +4,24 @@
       <h2>Quick Links</h2>
       <br>
       <ul>
-        <a href="#">
+        <?php
+          require_once('./includes/dbh.inc.php');
+          
+          $sql = "SELECT * FROM link WHERE linkID = '1';";
+          $execute = mysqli_query($conn, $sql);
+          $postData = mysqli_num_rows($execute);
+          if($postData > 0){
+              while($row = mysqli_fetch_array($execute)){ 
+                  $instagram = $row['linkInstagram'];
+                  $twitter = $row['linkTwitter'];
+                  $facebook = $row['linkFacebook'];
+                }
+              }
+        ?>
+        <a href="<?php echo $instagram; ?>">
           <li>Instagram</li>
         </a>
-        <a href="#">
+        <a href="<?php echo $twitter; ?>">
           <li>Twitter</li>
         </a>
         <a href="./index.php">
