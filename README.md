@@ -8,7 +8,7 @@ To Do List:
 + [x] Display Post ( Home Page )
 + [x] Add Post
 + [x] Edit Post
-+ [-] Delete Post
++ [x] Delete Post
 + [x] Add User
 + [x] Edit User
 + [x] Delete User
