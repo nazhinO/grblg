@@ -30,12 +30,12 @@ if(isset($_POST['submit'])){
 				$execute = mysqli_query($conn, $sql);
 
 				if(!$execute){
-					header('refresh:3; url= ../pages/add-post.php');
+					header('refresh:3; url= ../pages/edit-post.php');
 					echo "Failed to submit the data";
 					echo "Image probably is too large";
 					exit();
 				}else{
-					header('refresh:3; url=../pages/add-post.php');
+					header('refresh:3; url=../pages/edit-post.php');
 					echo "Articled published successfully!";
 					exit();
 				}
@@ -50,12 +50,12 @@ if(isset($_POST['submit'])){
 			$execute = mysqli_query($conn, $sql);
 
 			if(!$execute){
-				header('refresh:3; url= ../pages/add-post.php');
+				header('refresh:3; url= ../pages/edit-post.php');
 				echo "Failed to submit the data";
 				exit();
 			}else{
-				header('refresh:3; url=../pages/add-post.php');
-				echo "Articled published successfully!";
+				header('refresh:3; url=../pages/edit-post.php');
+				echo "Articled updated successfully!";
 				exit();
 			}
         }
@@ -64,13 +64,13 @@ if(isset($_POST['submit'])){
 			
 		
 	}else{
-		header('Location:./pages/add-post.php?emptyFields');
+		header('Location:./pages/edit-post.php?emptyFields');
 		exit();
 	}
 
 
 }else{
-	header('Location:./pages/add-post.php?invalidRequest');
+	header('Location:./pages/edit-post.php?invalidRequest');
 	exit();
 }
 

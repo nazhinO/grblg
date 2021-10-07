@@ -52,7 +52,7 @@
                   ?> 
                 </td>
                 <td><a href="./edit-post.php?postID=<?php echo $id; ?>" class="edit">edit</a></td>
-                <td><a href="#" class="delete">delete</a></td>
+                <td><a href="../includes/delete-post.inc.php?postID=<?php echo $id; ?>"  class="delete">delete</a></td>
                 <td><a href="#" class="publish">publish</a></td>
             </tr>
             <?php
