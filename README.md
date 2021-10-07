@@ -7,11 +7,11 @@ To Do List:
 + [x] Log in
 + [x] Display Post ( Home Page )
 + [x] Add Post
-+ [-] Edit Post
++ [x] Edit Post
 + [-] Delete Post
 + [x] Add User
-+ [-] Edit User
-+ [-] Delete User
++ [x] Edit User
++ [x] Delete User
 
 + [x] Add Home Page for dashboard
 + [x] Add Social Media 

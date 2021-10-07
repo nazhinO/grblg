@@ -51,7 +51,7 @@
                     }
                   ?> 
                 </td>
-                <td><a href="#" class="edit">edit</a></td>
+                <td><a href="./edit-post.php?postID=<?php echo $id; ?>" class="edit">edit</a></td>
                 <td><a href="#" class="delete">delete</a></td>
                 <td><a href="#" class="publish">publish</a></td>
             </tr>
