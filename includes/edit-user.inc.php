@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
 	//$thumbnail = mysqli_real_escape_($conn, $_POST['thumbnail']);
 
 	if(!empty($name) || !empty($alias)){
-			$sql = "UPDATE `user` SET `userName` = '$name', `userAlias` = '$alias' WHERE `userID` = '$id;";
+			$sql = "UPDATE `user` SET `userName` = '$name', `userAlias` = '$alias' WHERE `userID` = '$id';";
 
 			$execute = mysqli_query($conn, $sql);
 
