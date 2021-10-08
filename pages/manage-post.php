@@ -1,4 +1,7 @@
-<?php include_once("./header.php"); ?>
+<?php
+  $title = "Manage Post";
+  include_once("./header.php");
+?>
 <?php require_once("../includes/session.inc.php"); ?>
   <div class="admin-wrapper">
 

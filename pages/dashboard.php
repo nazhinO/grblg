@@ -1,4 +1,7 @@
-<?php include_once("./header.php"); ?>
+<?php
+  $title = "Dashboard";
+  include_once("./header.php");
+?>
 <?php require_once("../includes/session.inc.php"); ?>
   <div class="admin-wrapper">
 
@@ -33,8 +36,7 @@
             console.error( 'There was a problem initializing the editor.', error );
         } );
 </script>
-</body>
-</html>
+
 
 </body>
 

@@ -5,7 +5,10 @@
   $execute = mysqli_query($conn, $sql);
   $linkData = mysqli_num_rows($execute);
 ?>
-<?php include_once("./header.php"); ?>
+<?php
+  $title = "Manage Links";
+  include_once("./header.php");
+?>
 <?php require_once("../includes/session.inc.php"); ?>
 <div class="admin-wrapper">
 

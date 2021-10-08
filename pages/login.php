@@ -1,5 +1,7 @@
-
-<?php include("./header.php");?>
+<?php
+  $title = "Log In";
+  include_once("./header.php");
+?>
 <?php
   if(isset($_SESSION["userID"])){
     header("location: ../index.php");

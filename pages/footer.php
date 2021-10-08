@@ -65,6 +65,19 @@
 
   <!-- Custom Script -->
   <script src="/grblg/js/scripts.js"></script>
+  <script>
+
+  var settingLinks = document.getElementById("settingLinks");
+
+  function showMenu(){
+    settingLinks.style.left = "0";
+  }
+  
+  function hideMenu(){
+    settingLinks.style.left = "-60%";
+  }
+  
+</script>
 
 
 

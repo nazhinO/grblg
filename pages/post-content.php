@@ -1,5 +1,3 @@
-<?php include("./header.php");?>
-
 <?php
 	if(isset($_GET['postID'])){
 		require_once('../includes/dbh.inc.php');
@@ -11,7 +9,13 @@
 
 // $auth_id == $post['ID']
 		if($post > 0){ 
-		?>
+		?>	
+<?php
+  $title = $post['postTitle'];
+  include_once("./header.php");
+?>
+
+
 			<img class="post-image" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post['image']); ?>" /> 
 			<h1> <?php echo $post['postTitle']; ?> </h1>
 			<p> <?php echo $post['postContent']; ?> </p>

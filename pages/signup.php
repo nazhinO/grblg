@@ -1,5 +1,8 @@
 <?php require_once('../includes/dbh.inc.php')?>
-<?php include("./header.php");?>
+<?php
+  $title = "Add User";
+  include_once("./header.php");
+?>
 <?php require_once("../includes/session.inc.php"); ?>
 <div class="admin-wrapper">
 

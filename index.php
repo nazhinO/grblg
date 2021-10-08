@@ -6,7 +6,10 @@
   $postData = mysqli_num_rows($execute);
 ?>
 
-<?php include_once("./pages/header.php");?>
+<?php
+  $title = "Queen Casino";
+  include_once("./pages/header.php");
+?>
   <!-- Page Wrapper -->
   <div class="page-wrapper">
 
