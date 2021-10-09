@@ -60,7 +60,20 @@
             console.error( 'There was a problem initializing the editor.', error );
         } );
 </script>
-<!-- </body>
+<script>
 
-</html> -->
-<?php include_once("./footer.php"); ?>
+  var settingLinks = document.getElementById("settingLinks");
+
+  function showMenu(){
+    settingLinks.style.left = "0";
+  }
+  
+  function hideMenu(){
+    settingLinks.style.left = "-60%";
+  }
+  
+</script>
+</body>
+
+</html>
+<?php //include_once("./footer.php"); ?>

@@ -85,7 +85,7 @@
                 <div class="post-preview">
                 <h2> 
                   <a href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
-                    <?php echo $row['postTitle']; ?> 
+                    <?php echo ucfirst($row['postTitle']); ?> 
                   </a> 
                 </h2>
                 <i class="far fa-calendar"> Published on: <?php echo $date; ?> At: <?php echo $time; ?> </i> 

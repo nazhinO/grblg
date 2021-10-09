@@ -24,8 +24,8 @@
         <a href="<?php echo $twitter; ?>">
           <li>Twitter</li>
         </a>
-        <a href="./index.php">
-          <li>Gallery</li>
+        <a href="<?php echo $facebook; ?>">
+          <li>Facebook</li>
         </a>
         <a href="#">
           <li>Terms and Conditions</li>

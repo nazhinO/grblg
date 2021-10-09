@@ -77,6 +77,19 @@
       console.error( 'There was a problem initializing the editor.', error );
     } );
 </script>
+<script>
+
+  var settingLinks = document.getElementById("settingLinks");
+
+  function showMenu(){
+    settingLinks.style.left = "0";
+  }
+  
+  function hideMenu(){
+    settingLinks.style.left = "-60%";
+  }
+  
+</script>
 
 </body>
 
