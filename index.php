@@ -106,7 +106,19 @@
                   ?> 
                 </i>
                 
-                <p class="preview-text"> <?php echo $row['postContent']; ?> </p>
+                <p class="preview-text"> 
+                  <?php
+                    if (strlen($row['postContent']) > 250) // if you want...
+                    {
+                        $maxLength = 249;
+                        $yourString = substr($row['postContent'], 0, $maxLength);
+                        echo $yourString ."..."; 
+                    }else{
+                      echo $row['postContent'];
+                    }
+                    
+                  ?> 
+                </p>
                 <a class="btn read-more" href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
                     Read More
                   </a> 
