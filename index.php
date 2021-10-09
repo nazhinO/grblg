@@ -108,20 +108,22 @@
                 
                 <p class="preview-text"> 
                   <?php
-                    if (strlen($row['postContent']) > 250) // if you want...
+                    if (strlen($row['postContent']) > 200) // if you want...
                     {
-                        $maxLength = 249;
+                        $maxLength = 199;
                         $yourString = substr($row['postContent'], 0, $maxLength);
                         echo $yourString ."..."; 
+                        ?>
+                        <a class="btn read-more" href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
+                    Read More
+                  </a> <?php
                     }else{
                       echo $row['postContent'];
                     }
                     
                   ?> 
                 </p>
-                <a class="btn read-more" href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
-                    Read More
-                  </a> 
+                
 
           </div>
           <!-- // post-preview" -->
@@ -132,8 +134,6 @@
          <!-- // post clearfix" -->
           <?php 
               }
-           ?>
-               <?php
             }
           ?>
 

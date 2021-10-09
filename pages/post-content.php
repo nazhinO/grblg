@@ -14,27 +14,30 @@
   $title = $post['postTitle'];
   include_once("./header.php");
 ?>
+<div class="inside-post">
+		<!-- <img class="post-thumbnail" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post['image']); ?>" />  -->
+		<div class="entry-title">
+			<h1> <?php echo ucfirst($post['postTitle']); ?> </h1>
 
-
-			<img class="post-image" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post['image']); ?>" /> 
-			<h1> <?php echo $post['postTitle']; ?> </h1>
-			<p> <?php echo $post['postContent']; ?> </p>
+		</div>
+		<div class="entry-content">
+		<p> <?php echo $post['postContent']; ?> </p>
 		<?php
-			
+			// if post>0
 		}else{
 			header('refresh:3; url=../index.php');
 			echo "That article is none existent. You will now be redirected to the home page.";
 			
 		
 		}
-
+		// if sa isset
 	}else{
 		header('location:../index.php');
 		exit();
 	}
 ?>
-
-
+</div>
+</div>
   
 <!-- footer -->
 <?php include("./footer.php");?>

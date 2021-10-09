@@ -172,6 +172,36 @@ nav .fa{
   color: #006669;
 }
 
+/* Post Content */
+
+.inside-post{
+  padding: 50px;
+}
+
+.inside-post .post-thumbnail{
+  margin: 10px auto 20px;
+    display: block;
+    height: 400px;
+    width: 100%;
+}
+
+.inside-post .entry-title{
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.inside-post .entry-content{
+  background: grey;
+  padding: 50px;
+}
+
+/* End of Post Content */
+
+.notif{
+  color: darkred;
+  font-size: 12px;
+}
+
 /* Admin/Dashboard */
 .admin-wrapper {
   display: flex;
@@ -421,14 +451,14 @@ input[type="submit"]:hover{
   float: left;
 }
 
-.content .main-content.single {
+.content .main-content .single {
   background: white;
   padding: 20px 50px;
   font-size: 1.1em;
   border-radius: 5px;
 }
 
-.content .main-content.single .post-title {
+.content .main-content .single .post-title {
   text-align: center;
   margin-bottom: 40px;
 }

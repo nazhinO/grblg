@@ -40,7 +40,7 @@
 		</div>
 		<div>
 			<label>Thumbnail</label><br>
-			<i> Leave empty if you don't want to replace the old thumbnail </i>
+			<i class = "notif"> Leave empty if you don't want to replace the old thumbnail </i>
 			<input type="file" name="image" class="text-input">
 		</div>
 		<div>

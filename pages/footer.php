@@ -5,7 +5,7 @@
       <br>
       <ul>
         <?php
-          require_once('./includes/dbh.inc.php');
+          require_once('/opt/lampp/htdocs/grblg/includes/dbh.inc.php');
           
           $sql = "SELECT * FROM link WHERE linkID = '1';";
           $execute = mysqli_query($conn, $sql);
@@ -18,13 +18,13 @@
                 }
               }
         ?>
-        <a href="<?php echo $instagram; ?>">
+        <a href="<?php echo $instagram; ?>" target="_blank" rel="noopener noreferrer">
           <li>Instagram</li>
         </a>
-        <a href="<?php echo $twitter; ?>">
+        <a href="<?php echo $twitter; ?>" target="_blank" rel="noopener noreferrer">
           <li>Twitter</li>
         </a>
-        <a href="<?php echo $facebook; ?>">
+        <a href="<?php echo $facebook; ?>" target="_blank" rel="noopener noreferrer">
           <li>Facebook</li>
         </a>
         <a href="#">
