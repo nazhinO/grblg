@@ -55,9 +55,19 @@
                   ?> 
                 </td>
                 <td><a href="./edit-post.php?postID=<?php echo $id; ?>" class="edit">edit</a></td>
-                <td><a href="../includes/delete-post.inc.php?postID=<?php echo $id; ?>"  class="delete">delete</a></td>
-                <td><a href="#" class="publish">publish</a></td>
+                <td><input type="button" onclick="deleteMe(<?php echo $id; ?>)" class="delete" name="delete" value="Delete"></td>
+
+                <!-- <td><a href="../includes/delete-post.inc.php?postID=<?php echo $id; ?>"  class="delete">delete</a></td> -->
+                <!-- <td><a href="#" class="publish">publish</a></td> -->
             </tr>
+            <script type="text/javascript">
+                function deleteMe(delID){
+                    if(confirm("Are you sure you want to delete this post?")){
+                        window.location.href='../includes/delete-post.inc.php?del_ID=' +delID+'';
+                        return true;
+                    }
+                }
+            </script>
             <?php
                 }
                 ?>

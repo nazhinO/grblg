@@ -2,10 +2,10 @@
 
 session_start();
 
-if(isset($_GET['userID'])){
+if(isset($_GET['del_ID'])){
 	require_once("./dbh.inc.php");
 
-	 $auth_id = mysqli_real_escape_string($conn, $_GET['userID']);
+	 $auth_id = mysqli_real_escape_string($conn, $_GET['del_ID']);
 
 	$sql = "DELETE FROM user WHERE userID='$auth_id';";
 	$execute = mysqli_query($conn, $sql);

@@ -40,8 +40,17 @@
                 <td><?php echo $name; ?></td>
                 <td><?php echo $alias; ?></td>
                 <td><a href="edit-user.php?userID=<?php echo $id; ?>" class="edit">edit</a></td>
-                <td><a href="../includes/delete-user.inc.php?userID=<?php echo $id; ?>" class="delete">delete</a></td>
+                <td><input type="button" onclick="deleteMe(<?php echo $id; ?>)" class="delete" name="delete" value="Delete"></td>
+                <!-- <td><a href="../includes/delete-user.inc.php?userID=<?php echo $id; ?>" class="delete">delete</a></td> -->
             </tr>
+            <script type="text/javascript">
+                function deleteMe(delID){
+                    if(confirm("Are you sure you want to delete this account?")){
+                        window.location.href='../includes/delete-user.inc.php?del_ID=' +delID+'';
+                        return true;
+                    }
+                }
+            </script>
             <?php
                 }
                 ?>
