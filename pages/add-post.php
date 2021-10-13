@@ -21,9 +21,9 @@
 					<label>Title</label>
 					<input type="text" name="title" class="text-input">
 				</div>
-				<div class="post_content">
+				<div class="post_content" >
 					<label>Content</label>
-					<textarea name="content" id="editor"></textarea>
+					<textarea id="div_editor1" name="content"></textarea>
 				</div>
 				<div>
 					<label>Thumbnail</label>
@@ -45,7 +45,13 @@
 <div class="footer-bottom">
     &copy; QueenCasino
 </div>
-<script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script type="text/javascript" src="../js/richtexteditor/rte.js"></script>
+<script type="text/javascript" src='../js/richtexteditor/plugins/all_plugins.js'></script>
+<script>
+	var editor1 = new RichTextEditor("#div_editor1");
+	//editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+</script>
+<!-- <script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 <script>
 	ClassicEditor
 		.create( document.querySelector( '#editor' ) )
@@ -55,7 +61,7 @@
 		.catch( error => {
 			console.error( 'There was a problem initializing the editor.', error );
 		} );
-</script>
+</script> -->
 <script>
 
   var settingLinks = document.getElementById("settingLinks");

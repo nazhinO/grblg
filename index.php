@@ -108,17 +108,21 @@
                 
                 <p class="preview-text"> 
                   <?php
-                    if (strlen($row['postContent']) > 200) // if you want...
+                    $maxLength = 149;
+                    $yourString =  strip_tags($row['postContent']);
+                    // $pattern = '(<img)[^/>]*(/>|>)';
+                    // echo stripos($yourString, $pattern);
+                    if (strlen($yourString) > $maxLength) // if you want...
                     {
-                        $maxLength = 199;
-                        $yourString = substr($row['postContent'], 0, $maxLength);
-                        echo $yourString ."..."; 
+                      echo substr($yourString, 0, $maxLength) . '...';
+
                         ?>
                         <a class="btn read-more" href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
                     Read More
-                  </a> <?php
+                        </a> 
+                  <?php
                     }else{
-                      echo $row['postContent'];
+                      echo $yourString;
                     }
                     
                   ?> 

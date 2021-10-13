@@ -36,7 +36,7 @@
 		</div>
 		<div class="post_content">
 			<label>Content</label>
-			<textarea name="content" id="editor" value="<?php echo $post['postContent']; ?>" ></textarea>
+			<textarea name="content" id="div_editor1" value="<?php echo $post['postContent']; ?>" > </textarea>
 		</div>
 		<div>
 			<label>Thumbnail</label><br>
@@ -61,10 +61,18 @@
 <div class="footer-bottom">
     &copy; QueenCasino
 </div>
-<script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script type="text/javascript" src="../js/richtexteditor/rte.js"></script>
+<script type="text/javascript" src='../js/richtexteditor/plugins/all_plugins.js'></script>
+<script>
+	var editor1 = new RichTextEditor("#div_editor1");
+	// document.getElementById("div_editor1").value = "<?php //echo $post['postContent']; ?>";
+	
+	//editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+</script>
+<!-- <script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 <script>
 	
-	document.getElementById("editor").value = "<?php echo $post['postContent']; ?>";
+	document.getElementById("editor").value = "<?php //echo $post['postContent']; ?>";
 	ClassicEditor
 
 		.create( document.querySelector( '#editor' ) )
@@ -74,7 +82,7 @@
 		.catch( error => {
 			console.error( 'There was a problem initializing the editor.', error );
 		} );
-</script>
+</script> -->
 <script>
 
   var settingLinks = document.getElementById("settingLinks");
