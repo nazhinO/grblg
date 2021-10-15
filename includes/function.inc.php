@@ -1,5 +1,6 @@
 <?php
 
+	// signup.php functions
 	function emptyInputSignup($name, $username, $password, $cpassword){
 		$result;
 		if(empty($name) || empty($username) || empty($password) || empty($cpassword)){
@@ -10,9 +11,30 @@
 		return $result;
 	}
 
+	function credentialsLength($name){
+		$result;
+		if(strlen($name) < 2  ){
+			$result = true;
+		}else{
+			$result = false;
+		}
+		return $result;
+	}
+
+	function invalidName($name){
+		$result;
+		if(preg_match('/^[0-9,]+$/', $name)){
+			$result = true;
+		}else{
+			$result = false;
+		}
+		return $result;
+	}
+
 	function invalidUsername($username){
 		$result;
-		if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
+		// if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
+		if(!preg_match('/(?=.{3})(?!.{12})^[a-z 0 -9]+$/', $username)){
 			$result = true;
 		}else{
 			$result = false;
@@ -70,7 +92,9 @@
 		header("location: ../pages/signup.php?error=none");
 		exit();
 	}
+	// end of signup.php functions
 
+	// login.php functions
 	function emptyInputLogin($username, $password){
 		$result;
 		if(empty($username) || empty($password)){
@@ -97,8 +121,8 @@
 			session_start();
 			$_SESSION["userID"] = $usernameExists["userID"];
 			$_SESSION["userAlias"] = $usernameExists["userAlias"];
-			//$_SESSION["userName"] = $usernameExists["userName"];
 			header("location: ../pages/dashboard.php");
 			exit();
 		}
 	}
+	// End of login.php functions

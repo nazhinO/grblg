@@ -30,11 +30,11 @@
                   // $facebook = $row['linkFacebook'];
         ?>
                 <label for="instagram">Instagram</label><br>
-                <input type="text" name="instagram" value="<?php echo $row['linkInstagram']; ?>" ><br>
+                <input type="text" class="text-input" name="instagram" value="<?php echo $row['linkInstagram']; ?>" ><br>
                 <label for="twitter">Twitter</label><br>
-                <input type="text" name="twitter" value="<?php echo $row['linkTwitter']; ?> " ><br>
+                <input type="text" class="text-input" name="twitter" value="<?php echo $row['linkTwitter']; ?> " ><br>
                 <label for="facebook">Facebook</label><br>
-                <input type="text" name="facebook" value="<?php echo $row['linkFacebook']; ?>" ><br>
+                <input type="text" class="text-input" name="facebook" value="<?php echo $row['linkFacebook']; ?>" ><br>
                 <input type="submit" value="Update" name="submit">    
         <?php 
         }

@@ -14,6 +14,11 @@ body {
   background-color:rgb(244, 250, 245);
 }
 
+.redirect{
+  text-align: center;
+  font-size-adjust: 2em;
+}
+
 .post-slider h1{
   font-size: 45px;
 }
@@ -205,7 +210,9 @@ nav .fa{
 /* Admin/Dashboard */
 .admin-wrapper {
   display: flex;
-  height: 950px;
+  /*height: 950px;*/
+
+  height: 1000px;
 }
 .left-sidebar {
   flex: 2;
@@ -231,7 +238,7 @@ nav .fa{
   flex: 8;
   height: 100%;
   padding: 40px 100px 100px;
-  overflow-y: scroll;
+ /* overflow-y: scroll;*/
 }
 .admin-content .page-title {
   text-align: center;

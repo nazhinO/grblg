@@ -12,15 +12,14 @@ if(isset($_GET['del_ID'])){
 
 	if(!$execute){
 		header('refresh:3; url= ../pages/manage-post.php');
-		echo "Failed to delete post.";
+		echo "Failed to delete the post.";
 		exit();
 	}else{
 		header('refresh:3; url=../pages/manage-post.php');
 		echo "Post has been successfully deleted!";
 		exit();
 	}
-}
-else{
+}else{
 	header('refresh:3; url=../pages/manage-post.php');
 	echo "Unknown Error!";
 	exit();

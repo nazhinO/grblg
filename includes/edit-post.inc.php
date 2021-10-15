@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
 	//$thumbnail = mysqli_real_escape_($conn, $_POST['thumbnail']);
 	$postAuthor = $_SESSION['userID'];
 
-	if(!empty($title) || !empty($content)){
+	if(!empty($title) && !empty($content)){
 		//session_start();
 		if(!empty($_FILES["image"]["name"])){
 			//get file info
@@ -64,13 +64,13 @@ if(isset($_POST['submit'])){
 			
 		
 	}else{
-		header('Location:./pages/edit-post.php?emptyFields');
+		header('Location:../pages/edit-post.php?postID=' . $id);
 		exit();
 	}
 
 
 }else{
-	header('Location:./pages/edit-post.php?invalidRequest');
+	header('Location:../pages/edit-post.php?error=invalidRequest');
 	exit();
 }
 

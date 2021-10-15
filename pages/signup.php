@@ -30,53 +30,44 @@
     <div class="txt_field">
       <input type="password" name="cpassword">
       <label>Confirm Password</label>
-   
     </div>
+    <?php
+      if(isset($_GET["error"])){
+        if($_GET["error"] == "emptyinput"){
+          echo "<p class=error align=center>Fill in all fields!</p>";
+        }else if($_GET["error"] == "invalidusername"){
+          echo "<p class=error align=center>Invalid username.</p>";
+        }else if($_GET["error"] == "passwordsdontmatch"){
+          echo "<p class=error align=center>Passwords doesn't match!</p>";
+        }else if($_GET["error"] == "stmtfailed"){
+          echo "<p class=error align=center>Query error. Please try again later.</p>";
+        }else if($_GET["error"] == "usernametaken"){
+          echo "<p class=error align=center>Username already taken!</p>";
+        }else if($_GET["error"] == "unexpectederror"){
+          echo "<p class=error align=center>Enexpected Error</p>";
+        }else if($_GET["error"] == "tooshort"){
+          echo "<p class=error align=center>Name is too short.</p>";
+        }else if($_GET["error"] == "invalidname"){
+          echo "<p class=error align=center>Invalid name.</p>";
+        }else if($_GET["error"] == "none"){
+          echo "<p class=success align=center>You have signed up!</p>";
+        }
+      }
+    ?>
     <input type="submit" value="Register" id="register" name="submit">
     <div class="signup_link">
-     
-  
-     
     </div>
   </form>
 </div>
 
-
 </div>
-<?php
-  if(isset($_GET["error"])){
-    if($_GET["error"] == "emptyinput"){
-      echo "<p>Fill in all fields!</p>";
-    }else if($_GET["error"] == "invalidusername"){
-      echo "<p>Choose a proper username!</p>";
-    }else if($_GET["error"] == "passwordsdontmatch"){
-      echo "<p>Passwords doesn't match!";
-    }else if($_GET["error"] == "stmtfailed"){
-      echo "<p>Something went wrong</p>";
-    }else if($_GET["error"] == "usernametaken"){
-      echo "<p>Username already taken!</p>";
-    }else if($_GET["error"] == "none"){
-      echo "<p>You have signed up!</p>";
-    }
-  }
-?>
 
 </div>
 
 <div class="footer-bottom">
     &copy; QueenCasino
 </div>
-<script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-<script>
-  ClassicEditor
-    .create( document.querySelector( '#editor' ) )
-    .then( editor => {
-      window.editor = editor;
-    } )
-    .catch( error => {
-      console.error( 'There was a problem initializing the editor.', error );
-    } );
-</script>
+
 <script>
 
   var settingLinks = document.getElementById("settingLinks");

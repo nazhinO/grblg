@@ -35,7 +35,7 @@
 <header>
   <nav>
   <div class="logo">
-    <h1 class="logo-text"><span>My</span>Blog</h1>
+    <a href="/grblg/index.php"> <h1 class="logo-text"><span>My</span>Blog</h1> </a>
   </div>
   <div class="nav-links" id="settingLinks">
   <i class="fa fa-times" onclick="hideMenu()"></i>

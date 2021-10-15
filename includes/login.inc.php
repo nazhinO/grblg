@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+
     if(isset($_POST["submit"])){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -16,23 +16,6 @@
         loginUser($conn, $username, $password);
 
     }else{
-        header("location: ../pages/login.php");
+        header("location: ../pages/login.php?error=unexpectederror");
         exit();
     }
-
-
-    // session_start();
-    // include('./dbh.inc.php');
-    // $username = $_POST['userAlias'];
-    // $password = $_POST['userPwd'];
-    // $password_encrypted =sha1($password);
-
-    // $sql = mysqli_query($con, "SELECT count(*) as total from user WHERE userAlias = '".$username."' and userPwd = '".$password_encrypted."'");
-    // $row = mysqli_fetch_array($sql);
-
-    // if($row["total"] > 0){
-    //     $_SESSION['userAlias'] = $username;
-    //     echo "<script> alert('Login Success');window.location='../pages/add-post.php'</script>"; 
-    // }else{
-    //     echo "<script> alert('Login Failed');window.location='../index.php '</script>";
-    // }

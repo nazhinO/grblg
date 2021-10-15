@@ -21,37 +21,44 @@
         <label>Password</label>
       </div>
       <!-- signup_link class is after the submit button before -->
-      
-      <input type="submit" value="Login" name="submit">
-      <div class="signup_link">
-      </div>
-    </form>
-    <?php
+
+      <?php
 
       if(isset($_GET["error"])){
         if($_GET["error"] == "emptyinput"){
-          echo "<p>Fill in all fields!</p>";
+          echo "<p class=error align=center>Fill in all fields!</p>";
         }else if($_GET["error"] == "wronglogin"){
-          echo "<p>Login Failed</p>";
+          echo "<p class=error align=center>Login Failed</p>";
         }else if($_GET["error"] == "checkpass"){
-          echo "<p>Wrong Password</p>";
+          echo "<p class=error align=center>Wrong Password</p>";
+        }else if($_GET["error"] == "unexpectederror"){
+          echo "<p class=error align=center>Enexpected Error</p>";
         }
       }
-    ?>
+      
+      ?>
+      <input type="submit" value="Login" name="submit">
+
+      <div class="signup_link">
+      </div>
+    </form>
+    
   </div>
-  <script>
+
+<script>
 
   var settingLinks = document.getElementById("settingLinks");
 
   function showMenu(){
     settingLinks.style.left = "0";
   }
-  
+
   function hideMenu(){
     settingLinks.style.left = "-60%";
   }
-  
+
 </script>
+
 </body>
 </html>
 <?php //include("./footer.php");?>
