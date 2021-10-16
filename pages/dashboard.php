@@ -8,7 +8,6 @@
 <!-- Left Sidebar -->
 <?php include('./sidebar.php') ?>
 <!-- // Left Sidebar -->
-<?php //include('./session.php')?>
 
 <!-- Admin Content -->
 <div class="admin-content">
@@ -22,35 +21,4 @@
 <!-- // Admin Content -->
 
 </div>
-<div class="footer-bottom">
-    &copy; QueenCasino
-</div>
-<script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .then( editor => {
-            window.editor = editor;
-        } )
-        .catch( error => {
-            console.error( 'There was a problem initializing the editor.', error );
-        } );
-</script>
-<script>
-
-  var settingLinks = document.getElementById("settingLinks");
-
-  function showMenu(){
-    settingLinks.style.left = "0";
-  }
-  
-  function hideMenu(){
-    settingLinks.style.left = "-60%";
-  }
-  
-</script>
-
-</body>
-
-</html>
-<?php //include_once("./footer.php"); ?>
+<?php include_once("./footer.php"); ?>

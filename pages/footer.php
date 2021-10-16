@@ -27,9 +27,9 @@
         <a href="<?php echo $facebook; ?>" target="_blank" rel="noopener noreferrer">
           <li>Facebook</li>
         </a>
-        <a href="#">
+        <!-- <a href="#">
           <li>Terms and Conditions</li>
-        </a>
+        </a> -->
       </ul>
     </div>
 
@@ -65,6 +65,8 @@
 
   <!-- Custom Script -->
   <script src="/grblg/js/scripts.js"></script>
+
+  <!-- responsive navigation -->
   <script>
 
   var settingLinks = document.getElementById("settingLinks");
@@ -79,10 +81,13 @@
   
 </script>
 
-
-
-      
-      
+<!-- Richtexteditor -->
+<script type="text/javascript" src="/grblg/js/richtexteditor/rte.js"></script>
+<script type="text/javascript" src='/grblg/js/richtexteditor/plugins/all_plugins.js'></script>
+<script>
+  var editor1 = new RichTextEditor("#div_editor1");
+  //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+</script>
 
 </body>
 

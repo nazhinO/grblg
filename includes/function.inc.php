@@ -34,7 +34,8 @@
 	function invalidUsername($username){
 		$result;
 		// if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
-		if(!preg_match('/(?=.{3})(?!.{12})^[a-z 0 -9]+$/', $username)){
+		// if(!preg_match('/(?=.{3})(?!.{12})^[a-z 0 -9]+$/', $username)){
+		if(!preg_match('/^[a-zA-Z_]{2,20}[0-9]{0,2}$/i', $username)){
 			$result = true;
 		}else{
 			$result = false;
@@ -126,3 +127,31 @@
 		}
 	}
 	// End of login.php functions
+
+	// // add-post.php functions
+	// function emptyInputPost($title, $content, $thumbnail){
+	// 	$result;
+	// 	if(empty($title) || empty($content) || empty($_FILES['image']['name'])){
+	// 		$result = true;
+	// 	}else{
+	// 		$result = false;
+	// 	}
+	// 	return $result;
+	// }
+
+	// function addPost($conn, $title, $content, $imgContent, $author){
+	// 	$sql = "INSERT INTO post(postTitle, postContent, image, postAuthor) VALUES(?, ?, ?, ?);";
+	// 	$stmt = mysqli_stmt_init($conn);
+
+	// 	if(!mysqli_stmt_prepare($stmt, $sql)){
+	// 		header("location: ../pages/add-post.php?error=stmtfailed");
+	// 		exit();
+	// 	}
+
+	// 	mysqli_stmt_bind_param($stmt, "ssss", $title, $content, $imgContent, $author);
+	// 	mysqli_stmt_execute($stmt);
+	// 	mysqli_stmt_close($stmt);
+
+	// 	header("location: ../pages/add-post.php?error=none");
+	// 	exit();
+	// }

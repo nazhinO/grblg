@@ -21,9 +21,6 @@
 
   <!-- Custom Styling -->
   <!-- <link rel="stylesheet" href="/grblg/css/reset.css"> -->
-  <!-- <link rel="stylesheet" href="/grblg/css/login.css"> -->
-  <!-- <link rel="stylesheet" href="/grblg/css/register.css"> -->
-  <!-- <link rel="stylesheet" href="/grblg/css/admin.css"> -->
   <link rel="stylesheet" href="/grblg/js/richtexteditor/rte_theme_default.css" />
   <link rel="stylesheet" href="/grblg/css/style1.css">
 

@@ -237,8 +237,8 @@ nav .fa{
 .admin-wrapper .admin-content {
   flex: 8;
   height: 100%;
-  padding: 40px 100px 100px;
- /* overflow-y: scroll;*/
+  padding: 40px 100px 100px;/*
+  overflow-y: scroll;*/
 }
 .admin-content .page-title {
   text-align: center;
@@ -355,6 +355,7 @@ label {
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  margin-top: 30px;
 }
 .center h1{
   text-align: center;

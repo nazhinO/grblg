@@ -8,7 +8,6 @@
 <!-- Left Sidebar -->
 <?php include('./sidebar.php') ?>
 <!-- // Left Sidebar -->
-<?php //include('./session.php')?>
 
 <!-- Admin Content -->
 <div class="admin-content">
@@ -28,9 +27,12 @@
     // $auth_id == $post['ID']
             if($post > 0){ 
         ?>
-        <input type="text" name="ID" value="<?php echo $post['userID']; ?>" readonly><br>
-        <input type="text" name="name" value="<?php echo $post['userName']; ?>" ><br>
-        <input type="text" name="alias" value="<?php echo $post['userAlias']; ?>" ><br>
+        <label>ID</label>
+        <input type="text" class="text-input" name="ID" value="<?php echo $post['userID']; ?>" readonly><br>
+        <label>Name</label>
+        <input type="text" class="text-input" name="name" value="<?php echo $post['userName']; ?>" ><br>
+        <label>Username</label>
+        <input type="text" class="text-input" name="alias" value="<?php echo $post['userAlias']; ?>" ><br>
         <!-- <input type="password" name="pwd" value="<?php // echo $post['userPwd']; ?>" ><br> -->
 
       <input type="submit" value="Update" name="submit">
@@ -45,24 +47,5 @@
 <!-- // Admin Content -->
 
 </div>
-<div class="footer-bottom">
-    &copy; QueenCasino
-</div>
-<script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-<script>
 
-  var settingLinks = document.getElementById("settingLinks");
-
-  function showMenu(){
-    settingLinks.style.left = "0";
-  }
-  
-  function hideMenu(){
-    settingLinks.style.left = "-60%";
-  }
-  
-</script>
-</body>
-
-</html>
-<?php //include_once("./footer.php"); ?>
+<?php include_once("./footer.php"); ?>

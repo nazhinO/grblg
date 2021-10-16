@@ -16,6 +16,7 @@
 			<h2 class="page-title">Create Post</h2>
 	      <div class="add_post">
 				<form action="../includes/add-post.inc.php" method="POST" enctype="multipart/form-data">
+					<!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
 					<div>
 						<label>Title</label>
 						<input type="text" name="title" class="text-input">
@@ -34,12 +35,14 @@
 				      if(isset($_GET["error"])){
 				        if($_GET["error"] == "emptyinput"){
 				          echo "<p class=error align=center>Fill in all fields!</p>";
-				        }else if($_GET["error"] == "wronglogin"){
-				          echo "<p class=error align=center>Login Failed</p>";
-				        }else if($_GET["error"] == "checkpass"){
-				          echo "<p class=error align=center>Wrong Password</p>";
+				        }else if($_GET["error"] == "invalidthumbnail"){
+				          echo "<p class=error align=center>Sorry, only JPG, JPEG, PNG, & GIF files are allowed to be uploaded.</p>";
+				        }else if($_GET["error"] == "stmtfailed"){
+				          echo "<p class=error align=center>Query error.</p>";
 				        }else if($_GET["error"] == "unexpectederror"){
 				          echo "<p class=error align=center>Enexpected Error</p>";
+				        }else if($_GET["error"] == "none"){
+				          echo "<p class=success align=center>Post has been successfully added!</p>";
 				        }
 				      }
 				      
@@ -53,30 +56,6 @@
 <!-- // Admin Content -->
 
 </div>
-<div class="footer-bottom">
-  &copy; QueenCasino
-</div>
 
-<!-- Richtexteditor -->
-<script type="text/javascript" src="../js/richtexteditor/rte.js"></script>
-<script type="text/javascript" src='../js/richtexteditor/plugins/all_plugins.js'></script>
-<script>
-	var editor1 = new RichTextEditor("#div_editor1");
-	//editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
-</script>
-
-<!-- Navigation JS -->
-<script>
-  var settingLinks = document.getElementById("settingLinks");
-
-  function showMenu(){
-    settingLinks.style.left = "0";
-  }
-  
-  function hideMenu(){
-    settingLinks.style.left = "-60%";
-  }
-</script>
-
-</body>
-</html>
+<!-- footer -->
+<?php include_once("./footer.php");?>

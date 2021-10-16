@@ -8,7 +8,6 @@
 <!-- Left Sidebar -->
 <?php include('./sidebar.php') ?>
 <!-- // Left Sidebar -->
-<?php //include('./session.php')?>
 
 <!-- Admin Content -->
 <div class="admin-content">
@@ -58,45 +57,5 @@
 <!-- // Admin Content -->
 
 </div>
-<div class="footer-bottom">
-    &copy; QueenCasino
-</div>
-<script type="text/javascript" src="../js/richtexteditor/rte.js"></script>
-<script type="text/javascript" src='../js/richtexteditor/plugins/all_plugins.js'></script>
-<script>
-	var editor1 = new RichTextEditor("#div_editor1");
-	// document.getElementById("div_editor1").value = "<?php //echo $post['postContent']; ?>";
-	
-	//editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
-</script>
-<!-- <script src="../js/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-<script>
-	
-	document.getElementById("editor").value = "<?php //echo $post['postContent']; ?>";
-	ClassicEditor
 
-		.create( document.querySelector( '#editor' ) )
-		.then( editor => {
-			window.editor = editor;
-		} )
-		.catch( error => {
-			console.error( 'There was a problem initializing the editor.', error );
-		} );
-</script> -->
-<script>
-
-  var settingLinks = document.getElementById("settingLinks");
-
-  function showMenu(){
-    settingLinks.style.left = "0";
-  }
-  
-  function hideMenu(){
-    settingLinks.style.left = "-60%";
-  }
-  
-</script>
-</body>
-
-</html>
-<?php //include_once("./footer.php"); ?>
+<?php include_once("./footer.php"); ?>
