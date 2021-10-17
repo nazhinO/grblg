@@ -14,7 +14,7 @@
 <div class="admin-content">
   <div class="content">
 			<h2 class="page-title">Create Post</h2>
-	      <div class="add_post">
+	      <!-- <div class="add_post"> -->
 				<form action="../includes/add-post.inc.php" method="POST" enctype="multipart/form-data">
 					<!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
 					<div>
@@ -50,7 +50,7 @@
 						<button type="submit" name="submit" class="btn btn-big">Add Post</button>
 					</div>
 				</form>
-	      </div>
+	      <!-- </div> -->
   </div>
 </div>
 <!-- // Admin Content -->

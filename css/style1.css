@@ -180,14 +180,18 @@ nav .fa{
 /* Post Content */
 
 .inside-post{
-  padding: 50px;
+  padding: 25px;
+  border-style: solid;
+  min-height: 100vh;
+  background: whitesmoke;
+  padding-bottom: 100px;
 }
 
 .inside-post .post-thumbnail{
   margin: 10px auto 20px;
-    display: block;
-    height: 400px;
-    width: 100%;
+  display: block;
+  height: 400px;
+  width: 100%;
 }
 
 .inside-post .entry-title{
@@ -196,8 +200,10 @@ nav .fa{
 }
 
 .inside-post .entry-content{
-  background: grey;
+  /*background: whitesmoke;*/
   padding: 50px;
+  min-height: 70vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* End of Post Content */
@@ -237,8 +243,9 @@ nav .fa{
 .admin-wrapper .admin-content {
   flex: 8;
   height: 100%;
-  padding: 40px 100px 100px;/*
-  overflow-y: scroll;*/
+  padding: 40px 100px 100px;
+  overflow-y: scroll;
+  min-height: 50vh;
 }
 .admin-content .page-title {
   text-align: center;

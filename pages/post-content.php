@@ -15,7 +15,7 @@
   include_once("./header.php");
 ?>
 <div class="inside-post">
-		<!-- <img class="post-thumbnail" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post['image']); ?>" />  -->
+		<!-- <img class="post-thumbnail" src="data:image/jpg;charset=utf8;base64,<?php //echo base64_encode($post['image']); ?>" />  -->
 		<div class="entry-title">
 			<h1> <?php echo ucfirst($post['postTitle']); ?> </h1>
 
