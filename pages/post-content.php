@@ -14,12 +14,14 @@
   $title = $post['postTitle'];
   include_once("./header.php");
 ?>
+<div class="outside-post">
 <div class="inside-post">
 		<!-- <img class="post-thumbnail" src="data:image/jpg;charset=utf8;base64,<?php //echo base64_encode($post['image']); ?>" />  -->
 		<div class="entry-title">
 			<h1> <?php echo ucfirst($post['postTitle']); ?> </h1>
 
 		</div>
+		<hr>
 		<div class="entry-content">
 		<p> <?php echo $post['postContent']; ?> </p>
 		<?php
@@ -34,8 +36,16 @@
 	}else{
 		header('location:../index.php');
 		exit();
+	
 	}
-?>
+	?>
+	</div>
+	
+	
+</div>
+<div class="side-post">
+	<h1>Recent Post</h1>
+	
 </div>
 </div>
   

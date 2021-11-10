@@ -81,11 +81,20 @@
                   $author = $row['postAuthor'];
                 ?>
                 <div class="post clearfix">
-                <img class="post-image" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /> 
+                <img class="post-image" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" alt="<?php echo ucfirst($row['postTitle']); ?>" /> 
                 <div class="post-preview">
                 <h2> 
-                  <a href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
-                    <?php echo ucfirst($row['postTitle']); ?> 
+                  <a href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>" title="<?php echo ucfirst($row['postTitle']); ?>"> 
+                    <?php
+                      $limit = 50;
+                      $yourTitle = strip_tags($row['postTitle']);
+
+                      if(strlen($yourTitle) > $limit){
+                        echo ucfirst(substr($yourTitle, 0, $limit)) . '...';
+                      }else{
+                        echo ucfirst($yourTitle);
+                      }
+                    ?> 
                   </a> 
                 </h2>
                 <i class="far fa-calendar"> Published on: <?php echo $date; ?> At: <?php echo $time; ?> </i> 
@@ -109,12 +118,12 @@
                 <p class="preview-text"> 
                   <?php
                     $maxLength = 149;
-                    $yourString =  strip_tags($row['postContent']);
+                    $yourContent =  strip_tags($row['postContent']);
                     // $pattern = '(<img)[^/>]*(/>|>)';
-                    // echo stripos($yourString, $pattern);
-                    if (strlen($yourString) > $maxLength) // if you want...
+                    // echo stripos($yourContent, $pattern);
+                    if (strlen($yourContent) > $maxLength) // if you want...
                     {
-                      echo substr($yourString, 0, $maxLength) . '...';
+                      echo substr($yourContent, 0, $maxLength) . '...';
 
                         ?>
                         <a class="btn read-more" href="./pages/post-content.php?postID=<?php echo $row['postID']; ?>"> 
@@ -122,7 +131,7 @@
                         </a> 
                   <?php
                     }else{
-                      echo $yourString;
+                      echo $yourContent;
                     }
                     
                   ?> 
