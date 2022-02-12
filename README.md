@@ -38,12 +38,11 @@ Geor:
 To do list atm:
 1. Error and redirecting handling
 
-
 --
 + post title should have a limit too. then add title attribute
 
-
-
-
 - hr for content works too
 - alt attribute for thumbnails
+
+--
+END 
